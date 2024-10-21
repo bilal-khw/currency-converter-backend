@@ -22,5 +22,8 @@ morganBody(app, {
 
 // Routes
 app.use(`${API_PREFIX}`, currencyRouter);
+app.get("/", (req: Request, res: Response) => {
+  return res.json({ message: "Welcome to DoubleDate APIs" });
+});
 
 export default app;
