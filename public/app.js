@@ -23,4 +23,7 @@ app.use((0, morgan_1.default)("dev"));
 });
 // Routes
 app.use(`${environment_1.API_PREFIX}`, currencyConverter_1.default);
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to DoubleDate APIs" });
+});
 exports.default = app;
