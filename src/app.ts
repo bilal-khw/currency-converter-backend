@@ -2,7 +2,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import morganBody from "morgan-body";
-import express from "express";
+import express, { Request, Response } from "express";
 import { API_PREFIX } from "./config/environment";
 import currencyRouter from "./routes/currencyConverter";
 dotenv.config();
@@ -23,7 +23,7 @@ morganBody(app, {
 // Routes
 app.use(`${API_PREFIX}`, currencyRouter);
 app.get("/", (req: Request, res: Response) => {
-  return res.json({ message: "Welcome to DoubleDate APIs" });
+  res.json({ message: "Welcome to DoubleDate APIs" });
 });
 
 export default app;
